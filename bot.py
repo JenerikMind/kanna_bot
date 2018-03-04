@@ -9,7 +9,8 @@ def test_import():
 	print('Imported successfully')
 
 def run_bot(buffs, teleport, kishin, df):
-	print('Running the bot now')
+	print('Running the bot now, 5 seconds to make sure Maple is clicked')
+	time.sleep(5)
 	try:
 		timer_sec = 0
 		while True:
