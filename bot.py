@@ -60,12 +60,12 @@ def run_bot(buffs, teleport, kishin, df):
 			if timer_sec == 0 or timer_sec % 120 == 0:
 				pa.click(buffs) # apply buffs
 				print('pressed buffs')
-				time_sec += buff_timer
+				timer_sec += buff_timer
 				time.sleep(buff_timer)	# buff delay timer so you dont miss any buffs
 				
 				pa.click(kishin) # spawn kishin
 				print('pressed kishin')
-				time_sec += kishin_spawn_timer
+				timer_sec += kishin_spawn_timer
 				time.sleep(kishin_spawn_timer)	# delay for kishin
 			
 			# teleport with 1.5 sec delay default
