@@ -49,39 +49,34 @@ def run_bot(buffs, teleport, kishin, df):
 	time.sleep(5)
 	try:
 		timer_sec = 0
-		while True:
-			# Press esc to break the loop
-			if keyboard.is_pressed('esc'):
-				print('Escape button pressed.')
-				break
-		
+		while True:		
 			# if its a fresh run of the program or
 			# every 2 minutes
 			if timer_sec == 0 or timer_sec % 120 == 0:
 				pa.click(buffs) # apply buffs
-				print('pressed buffs')
+				print('pressed buffs coords: ' + str(buffs))
 				timer_sec += buff_timer
 				time.sleep(buff_timer)	# buff delay timer so you dont miss any buffs
 				
 				pa.click(kishin) # spawn kishin
-				print('pressed kishin')
+				print('pressed kishin coords:' + str(kishin))
 				timer_sec += kishin_spawn_timer
 				time.sleep(kishin_spawn_timer)	# delay for kishin
 			
 			# teleport with 1.5 sec delay default
 			pa.click(teleport)
-			print('pressed teleport')
+			print('pressed teleport coords: ' + str(teleport))
 			time.sleep(teleport_delay)
 			
 			if timer_sec % 9 == 0: # timing for demon force
 				pa.click(df)
-				print('pressed demon force')
+				print('pressed demon force coords: ' + str(df))
 			timer_sec += 1.5 # adding 1.5 seconds to account for frame delay of skill
 			print(timer_sec)
 			
 	except KeyboardInterrupt:
 		print('done')
-
+		
 def key_setup():
 
 	#### Key locs ####
