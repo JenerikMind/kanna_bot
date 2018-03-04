@@ -4,7 +4,7 @@ import time
 import os
 from ast import literal_eval
 
-buff_timer = 4
+buff_timer = 5
 kishin_spawn_timer = 2
 teleport_delay = 1.52
 
