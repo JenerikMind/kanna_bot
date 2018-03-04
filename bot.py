@@ -4,9 +4,11 @@ import time
 import os
 from ast import literal_eval
 
-buff_timer = 5
-kishin_spawn_timer = 2
-teleport_delay = 1.52
+# timers in seconds
+buff_kishin_timer = 120
+buff_delay = 5
+kishin_spawn_delay = 2
+teleport_delay = 4
 
 def test_import():
 	print('Imported successfully')
@@ -52,16 +54,16 @@ def run_bot(buffs, teleport, kishin, df):
 		while True:		
 			# if its a fresh run of the program or
 			# every 2 minutes
-			if timer_sec == 0 or timer_sec % 120 == 0:
+			if timer_sec == 0:
 				pa.click(buffs) # apply buffs
 				print('pressed buffs coords: ' + str(buffs))
-				timer_sec += buff_timer
-				time.sleep(buff_timer)	# buff delay timer so you dont miss any buffs
+				timer_sec += buff_delay
+				time.sleep(buff_delay)	# buff delay timer so you dont miss any buffs
 				
 				pa.click(kishin) # spawn kishin
 				print('pressed kishin coords:' + str(kishin))
-				timer_sec += kishin_spawn_timer
-				time.sleep(kishin_spawn_timer)	# delay for kishin
+				timer_sec += kishin_spawn_delay
+				time.sleep(kishin_spawn_delay)	# delay for kishin
 			
 			# teleport with 1.5 sec delay default
 			pa.click(teleport)
@@ -74,6 +76,8 @@ def run_bot(buffs, teleport, kishin, df):
 			timer_sec += 1.5 # adding 1.5 seconds to account for frame delay of skill
 			print(timer_sec)
 			
+			if timer_sec >= buff_kishin_timer:
+				timer_sec =0
 	except KeyboardInterrupt:
 		print('done')
 		
