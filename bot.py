@@ -129,4 +129,5 @@ def key_setup():
 			break
 			
 	print('Coords set to {0}'.format(df_coords))
+	save_coords(buff_coords, tele_coords, kishin_coords, df_coords)
 	run_bot(buff_coords, tele_coords, kishin_coords, df_coords)
