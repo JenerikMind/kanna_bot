@@ -25,7 +25,7 @@ time.sleep(1)
 
 #########			
 ### FIND COORDS FOR TELEPORT ###
-print('Hover the mouse over the buff macro, then press enter: ')
+print('Hover the mouse over the teleport macro, then press enter: ')
 while True:
 	if keyboard.is_pressed('return'):
 		tele_coords = pa.position()
@@ -37,7 +37,7 @@ time.sleep(1)
 
 #########		
 ### FIND COORDS FOR KISHIN ###
-print('Hover the mouse over the buff macro, then press enter: ')
+print('Hover the mouse over the kishin macro, then press enter: ')
 while True:
 	if keyboard.is_pressed('return'):
 		kishin_coords = pa.position()
@@ -49,7 +49,7 @@ time.sleep(1)
 
 #########			
 ### FIND COORDS FOR DEMON'S FURY ###
-print('Hover the mouse over the buff macro, then press enter: ')
+print('Hover the mouse over the demon force macro, then press enter: ')
 while True:
 	if keyboard.is_pressed('return'):
 		df_coords = pa.position()
