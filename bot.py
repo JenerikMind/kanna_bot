@@ -60,8 +60,10 @@ def run_bot(buffs, teleport, kishin, df):
 			if timer_sec == 0 or timer_sec % 120 == 0:
 				pa.click(buffs) # apply buffs
 				time.sleep(buff_timer)	# buff delay timer so you dont miss any buffs
+				timer_sec += buff_timer
 				pa.click(kishin) # spawn kishin
 				time.sleep(kishin_spawn_timer)	# delay for kishin
+				timer_sec += kishin_spawn_timer
 			
 			# teleport with 1.5 sec delay default
 			pa.click(teleport)
@@ -69,7 +71,7 @@ def run_bot(buffs, teleport, kishin, df):
 			
 			if timer_sec % 9 == 0: # timing for demon force
 				pa.click(df)
-			timer_sec += 1.5 # adding 1.5 seconds to account for frame delay of skill
+			timer_sec += teleport_delay # adding 1.5 seconds to account for frame delay of skill
 			print(timer_sec)
 			
 	except KeyboardInterrupt:
