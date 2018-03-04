@@ -14,6 +14,8 @@ while setup:
 	if user_input == '1':
 		bot.key_setup()
 		setup = False
+		break
 	else:
 		bot.load_coords()
 		setup = False
+		break
